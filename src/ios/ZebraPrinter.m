@@ -1,7 +1,7 @@
 #import "ZebraPrinter.h"
 
 #import <ExternalAccessory/ExternalAccessory.h>
-// #import "MfiBtPrinterConnection.h"
+#import "MfiBtPrinterConnection.h"
 @implementation ZebraPrinter 
 
 -(void)sendZplOverBluetooth{
