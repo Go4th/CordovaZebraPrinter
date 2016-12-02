@@ -1,7 +1,7 @@
 #import "ZebraPrinter.h"
 
 #import <ExternalAccessory/ExternalAccessory.h>
-#import "MfiBtPrinterConnection.h"
+// #import "MfiBtPrinterConnection.h"
 -(void)sendZplOverBluetooth{
 NSString *serialNumber = @"XXRBJ150600910";
 //Find the Zebra Bluetooth Accessory
