@@ -6,6 +6,6 @@
 
 - (void)sendCPclOverBluetooth:(CDVInvokedUrlCommand*)command;
 
-- (void)enableLogs:(CDVInvokedUrlCommand*)command;
+- (void)sampleWithGCD:(CDVInvokedUrlCommand*)command;
 
 @end
