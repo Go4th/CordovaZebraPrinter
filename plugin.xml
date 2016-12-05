@@ -61,10 +61,10 @@
 
 		<!-- <source-file src="src/ios/xxx.a" framework="true" /> -->
 
-        <header-file src="src/ios/MfiBtPrinterConnection.h"/>
-        <header-file src="src/ios/ZebraPrinterConnection.h"/>
-		<header-file src="src/ios/ZebraPrinter.h" />
-		<source-file src="src/ios/ZebraPrinter.m" />
+        <header-file src="src/ios/ZebraPrinter.h" />
+        <header-file src="src/ios/MfiBtPrinterConnection.h" />
+        <header-file src="src/ios/ZebraPrinterConnection.h" />
+        <source-file src="src/ios/ZebraPrinter.m" />
 
     
 	</platform>
