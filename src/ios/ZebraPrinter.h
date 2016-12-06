@@ -2,7 +2,7 @@
 
 @interface ZebraPrinter : CDVPlugin
 
-// - (void)sendZplOverBluetooth:(CDVInvokedUrlCommand*)command;
-- (void)sendZplOverBluetooth;
+- (void)sendZplOverBluetooth:(CDVInvokedUrlCommand*)command;
+// - (void)sendZplOverBluetooth;
 
 @end
