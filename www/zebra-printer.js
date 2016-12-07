@@ -7,13 +7,9 @@ var exec = require('cordova/exec');
 var ZebraPrinter = function() {};
 
 
-ZebraPrinter.sendZplOverBluetooth = function (printObj, callback, scope, args) {
-	exec(printObj, callback, scope, args);
+ZebraPrinter.sendZplOverBluetooth = function (printObj, success, error) {
+	exec(printObj, success, error, 'ZebraPrinter', 'sendZplOverBluetooth', []);
 };
-
-// ZebraPrinter.sendZplOverBluetooth = function (success, error) {
-// 	exec(success, error, 'ZebraPrinter', 'sendZplOverBluetooth', []);
-// };
 
 // ZebraPrinter.enableLogs = function (enable, success, error) {
 // 	exec(success, error, 'ZebraPrinter', 'enableLogs', [enable]);
