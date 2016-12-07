@@ -59,7 +59,7 @@
             </feature>
         </config-file>
 
-		<!-- <source-file src="src/ios/xxx.a" framework="true" /> -->
+		<source-file src="src/ios/libZSDK_API.a" framework="true" />
 
         <header-file src="src/ios/ZebraPrinter.h" />
         
