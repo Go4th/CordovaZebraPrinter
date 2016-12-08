@@ -15,7 +15,7 @@
     NSString* printPayMethod = printItems [@"ticketPaymentMethod"];
     NSNumber* printTransId = printItems [@"transactionId"];
     
-    NSString* finalPrint = [NSString stringWithFormat:@"%@\nPaid For: =%@\nItems On This Ticket: %@\nTransaction Id: %@", printTitle, printPayMethod, printCount, printTransId];
+    NSString* finalPrint = [NSString stringWithFormat:@"%@\nPaid For: %@\nItems On This Ticket: %@\nTransaction Id: %@", printTitle, printPayMethod, printCount, printTransId];
 
     NSLog(@"this is the variable value: %@",printItems[@"scriptCount"]);
 
@@ -47,7 +47,7 @@
             NSError *error = nil;
             
             // Send the data to printer as a byte array.
-            success = success && [thePrinterConn write:[zplData dataUsingEncoding:NSUTF8StringEncoding] error:&error];
+            success = success && [thePrinterConn write:[finalPrint dataUsingEncoding:NSUTF8StringEncoding] error:&error];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(success != YES || error != nil) {
