@@ -10,6 +10,7 @@
 - (void) sendZplOverBluetooth:(CDVInvokedUrlCommand*)command {
     
     NSDictionary* printItems = command.arguments[0];
+    NSNumber* printCount = [printItems valueForKey@"scriptCount"];
 
     NSLog(@"this is the variable value: %@",printItems[@"scriptCount"]);
 
