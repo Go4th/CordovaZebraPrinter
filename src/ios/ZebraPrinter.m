@@ -10,11 +10,7 @@
 - (void) sendZplOverBluetooth:(CDVInvokedUrlCommand*)command {
     
     NSArray* printItems = command.arguments[0];
-    
-    let ticketCount = printItems["scriptCount"];
-    let ticketTitle = printItems["title"];
-    let ticketPayment = printItems["ticketPaymentMethod"];
-    let ticketTransNum = printItems["transactionId"];
+
 
         
         //Dispatch this task to the default queue
