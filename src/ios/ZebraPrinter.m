@@ -9,7 +9,12 @@
 
 - (void) sendZplOverBluetooth:(CDVInvokedUrlCommand*)command {
     
-    NSArray* printItems = command.arguments;
+    NSArray* printItems = command.arguments[0];
+    NSString* ticketCount = printItems[0];
+    NSString* ticketTitle = printItems[1];
+    NSString* ticketPayment = printItems[2];
+    NSNumber* ticketTransNum = printItems[3];
+
         
         //Dispatch this task to the default queue
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
