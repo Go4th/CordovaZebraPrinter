@@ -11,10 +11,10 @@
     
     NSArray* printItems = command.arguments[0];
     
-    NSString* ticketCount = printItems["scriptCount"];
-    NSString* ticketTitle = printItems["title"];
-    NSString* ticketPayment = printItems["ticketPaymentMethod"];
-    NSString* ticketTransNum = printItems["transactionId"];
+    let ticketCount = printItems["scriptCount"];
+    let ticketTitle = printItems["title"];
+    let ticketPayment = printItems["ticketPaymentMethod"];
+    let ticketTransNum = printItems["transactionId"];
 
         
         //Dispatch this task to the default queue
