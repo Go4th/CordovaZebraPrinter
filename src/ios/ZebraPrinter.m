@@ -9,8 +9,9 @@
 
 - (void) sendZplOverBluetooth:(CDVInvokedUrlCommand*)command {
     
-    NSArray* printItems = command.arguments[0];
+    NSDictionary* printItems = command.arguments[0];
 
+    NSLog(@"this is the variable value: %d",printItems["scriptCount"]);
 
         
         //Dispatch this task to the default queue
