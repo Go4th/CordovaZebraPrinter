@@ -15,7 +15,7 @@
     NSString* printPayMethod = printItems [@"ticketPaymentMethod"];
     NSNumber* printTransId = printItems [@"transactionId"];
     
-    NSString* finalPrint = [NSString stringWithFormat:@"printCount=%@&printTitle=%@&printPayMethod=%@&printTransId%@&", printCount, printTitle, printPayMethod, printTransId];
+    NSString* finalPrint = [NSString stringWithFormat:@"%@\nPaid For: =%@\nItems On This Ticket: %@\nTransaction Id: %@", printTitle, printPayMethod, printCount, printTransId];
 
     NSLog(@"this is the variable value: %@",printItems[@"scriptCount"]);
 
