@@ -11,7 +11,7 @@
     
     NSDictionary* printItems = command.arguments[0];
 
-    NSLog(@"this is the variable value: %",printItems[@"scriptCount"]);
+    NSLog(@"this is the variable value: %%",printItems[@"scriptCount"]);
 
         
         //Dispatch this task to the default queue
