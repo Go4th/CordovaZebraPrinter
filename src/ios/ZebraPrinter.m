@@ -14,7 +14,7 @@
     // NSString* printTitle = printItems [@"title"];
     // NSString* printPayMethod = printItems [@"ticketPaymentMethod"];
     NSNumber* printTransId = printItems [@"transactionId"];
-    NSString* printBody = printItems [@"printBody"]
+    NSString* printBody = printItems [@"printBody"];
     
     // NSString* finalPrint = [NSString stringWithFormat:@"^XA\r\n^FO50,50\r\n^FD%@^FS\r\n^FO50,150\r\n^FDPaid For: %@\r\n^FO50,250\r\n^FDItems On This Ticket: %@\r\n^FO50,350\r\n^FO100,100^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printTitle, printPayMethod, printCount, printTransId];
     // NSString* finalPrint = [NSString stringWithFormat:@"^XA^CF0,75^A2N,50,50^FO200,100^FD%@^FS^A2N,40,40^FO250,175^FDPaid For: %@^FS^A2N,40,40^FO225,225^FDItems On This Ticket: %@^FS^FO275,300^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printTitle, printPayMethod, printCount, printTransId];
@@ -46,7 +46,7 @@
             BOOL success = [thePrinterConn open];
             
             // This example prints "This is a ZPL test." near the top of the label.
-            NSString *zplData = @"^XA^FO20,20^A0N,25,25^FDThis is a ZPL test.^FS^XZ";
+            // NSString *zplData = @"^XA^FO20,20^A0N,25,25^FDThis is a ZPL test.^FS^XZ";
             NSError *error = nil;
             
             // Send the data to printer as a byte array.
