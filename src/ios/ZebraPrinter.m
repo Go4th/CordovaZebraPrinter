@@ -15,17 +15,8 @@
     NSString* printPayMethod = printItems [@"ticketPaymentMethod"];
     NSNumber* printTransId = printItems [@"transactionId"];
     
-    // NSString* finalPrint = [NSString stringWithFormat:@"%@\nPaid For: %@\nItems On This Ticket: %@\nTransaction Id: %@", printTitle, printPayMethod, printCount, printTransId];
-    NSString* finalPrint = [NSString stringWithFormat:@"^XA\r\n
-                                                        ^FO50,50\r\n
-                                                        ^FD%@^FS\r\n
-                                                        ^FO50,150\r\n
-                                                        ^FDPaid For: %@\r\n
-                                                        ^FO50,250\r\n
-                                                        ^FDItems On This Ticket: %@\r\n
-                                                        ^FO50,350\r\n
-                                                        ^FDTransaction Id: %@\r\n
-                                                        ^XZ\r\n", printTitle, printPayMethod, printCount, printTransId];
+    // NSString* finalPrint = [NSString stringWithFormat:@"^XA\r\n^FO50,50\r\n^FD%@^FS\r\n^FO50,150\r\n^FDPaid For: %@\r\n^FO50,250\r\n^FDItems On This Ticket: %@\r\n^FO50,350\r\n^FO100,100^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printTitle, printPayMethod, printCount, printTransId];
+    NSString* finalPrint = [NSString stringWithFormat:@"^XA^CF0,75^A2N,50,50^FO200,100^FD%@^FS^A2N,40,40^FO250,175^FDPaid For: %@^FS^A2N,40,40^FO225,225^FDItems On This Ticket: %@^FS^FO275,300^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printTitle, printPayMethod, printCount, printTransId];
     NSLog(@"this is the variable value: %@",printItems[@"scriptCount"]);
 
         
