@@ -8,7 +8,8 @@
 @implementation ZebraPrinter : CDVPlugin
 
 - (void) sendZplOverBluetooth:(CDVInvokedUrlCommand*)command {
-    
+    [self.commandDelegate runInBackground:^{
+    __block CDVPluginResult* result;
     NSDictionary* printItems = command.arguments[0];
     // NSNumber* printCount = printItems [@"scriptCount"];
     // NSString* printTitle = printItems [@"title"];
@@ -45,6 +46,11 @@
             // Open the connection - physical connection is established here.
             BOOL success = [thePrinterConn open];
             
+//            if (success != YES) {
+//                UIAlertView *errorConnectAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Either the printer is turned off or not connected." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+//                [errorConnectAlert show];
+//            }
+            
             // This example prints "This is a ZPL test." near the top of the label.
             // NSString *zplData = @"^XA^FO20,20^A0N,25,25^FDThis is a ZPL test.^FS^XZ";
             NSError *error = nil;
@@ -54,16 +60,34 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(success != YES || error != nil) {
-                    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                    [errorAlert show];
+                    //UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Either the printer is turned off or not connected." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                    
+//                    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                    
+
+                    //[errorAlert show];
+                    
+                    
+                    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
+                                               messageAsString:[NSString stringWithFormat:
+                                                                @"Either the printer is turned off or not connected."]];
+                //result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+                    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+                } else {
+                    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                               messageAsString:[NSString stringWithFormat:
+                                                                @"You have successfully printed the ticket."]];
+                    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
                 }
             });
             
             // Close the connection to release resources.
             [thePrinterConn close];
         });
-    
-}
+        
+
+    }];
+    }
 
 //-(void)sendZplOverBluetooth:(CDVInvokedUrlCommand*)command{
 //	NSString *serialNumber = @"";
