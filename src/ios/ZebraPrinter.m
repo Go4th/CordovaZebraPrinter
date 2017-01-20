@@ -20,7 +20,7 @@
     // NSString* finalPrint = [NSString stringWithFormat:@"^XA\r\n^FO50,50\r\n^FD%@^FS\r\n^FO50,150\r\n^FDPaid For: %@\r\n^FO50,250\r\n^FDItems On This Ticket: %@\r\n^FO50,350\r\n^FO100,100^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printTitle, printPayMethod, printCount, printTransId];
     // NSString* finalPrint = [NSString stringWithFormat:@"^XA^CF0,75^A2N,50,50^FO200,100^FD%@^FS^A2N,40,40^FO250,175^FDPaid For: %@^FS^A2N,40,40^FO225,225^FDItems On This Ticket: %@^FS^FO275,300^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printTitle, printPayMethod, printCount, printTransId];
     // Print Body String
-    NSString* finalPrintBody = [NSString stringWithFormat:@"^XA^LL1000^CF0,75^A2N,30,30^FO200,100^FB500,17,5,C^FD%@^FS^FO275,750^BY3^B1N,N,150,Y,N^FD%@^FS^XZ", printBody, printTransId];
+    NSString* finalPrintBody = [NSString stringWithFormat:@"^XA^LL1000^CF0,75^A2N,30,30^FO180,100^FB500,17,5,C^FD%@^FS^FO190,750^BY3^B3N,N,150,Y,N^FD%@^FS^XZ", printBody, printTransId];
     NSLog(@"this is the variable value: %@",printItems[@"printBody"]);
 
         
